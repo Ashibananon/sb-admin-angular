@@ -3,14 +3,16 @@ import { Title } from '@angular/platform-browser';
 import { ChildActivationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
+import { UserService } from '@modules/auth/services';
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'sb-admin-angular';
-    constructor(public router: Router, private titleService: Title) {
+    title = 'Ashibananon';
+    constructor(public router: Router, private titleService: Title, private us: UserService) {
         this.router.events
             .pipe(filter(event => event instanceof ChildActivationEnd))
             .subscribe(event => {
@@ -18,7 +20,8 @@ export class AppComponent {
                 while (snapshot.firstChild !== null) {
                     snapshot = snapshot.firstChild;
                 }
-                this.titleService.setTitle(snapshot.data.title || 'SB Admin Angular');
+                this.titleService.setTitle(snapshot.data.title || 'Ashibananon');
             });
+        this.us.getDefaultUser();
     }
 }

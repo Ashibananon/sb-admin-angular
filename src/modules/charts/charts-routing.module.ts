@@ -19,11 +19,11 @@ export const ROUTES: Routes = [
         canActivate: [],
         component: chartsContainers.ChartsComponent,
         data: {
-            title: 'Charts - SB Admin Angular',
+            title: 'Charts - Ashibananon',
             breadcrumbs: [
                 {
-                    text: 'Dashboard',
-                    link: '/dashboard',
+                    text: 'Home',
+                    link: '/home',
                 },
                 {
                     text: 'Charts',

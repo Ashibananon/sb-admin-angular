@@ -8,6 +8,11 @@ nav#sidenavAccordion.sb-sidenav.accordion([ngClass]='sidenavStyle')
                         [sideNavItem]='sideNavItems[item]'
                     )
     .sb-sidenav-footer
-        .small Logged in as:
-        span(*ngIf='userService.user$ | async as user')
-            | {{user.firstName}} {{user.lastName}}
+        div(*ngIf='userService.user$ | async as user')
+            div(*ngIf='user.isLogin; then loginSec else notLoginSec')
+            ng-template(#loginSec)
+                .small Logged in as:
+                span
+                    | {{user.firstName}} {{user.lastName}}
+            ng-template(#notLoginSec)
+                span Not login in.

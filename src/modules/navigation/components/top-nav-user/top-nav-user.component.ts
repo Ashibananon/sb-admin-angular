@@ -9,5 +9,12 @@ import { UserService } from '@modules/auth/services';
 })
 export class TopNavUserComponent implements OnInit {
     constructor(public userService: UserService) {}
-    ngOnInit() {}
+    ngOnInit() {
+    }
+
+    doLogout(): void {
+        // this.userService.serializeUser(null);
+        // this.userService.user = this.userService.deserializeUser();
+        this.userService.doLogout();
+    }
 }

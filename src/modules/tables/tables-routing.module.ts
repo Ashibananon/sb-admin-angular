@@ -19,11 +19,11 @@ export const ROUTES: Routes = [
         canActivate: [],
         component: tablesContainers.TablesComponent,
         data: {
-            title: 'Tables - SB Admin Angular',
+            title: 'Tables - Ashibananon',
             breadcrumbs: [
                 {
-                    text: 'Dashboard',
-                    link: '/dashboard',
+                    text: 'Home',
+                    link: '/home',
                 },
                 {
                     text: 'Tables',
